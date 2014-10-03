@@ -1,0 +1,82 @@
+<!DOCTYPE html />
+
+<html>
+<header>
+<title>The Classic Race</title>
+<link rel="stylesheet" href="HW_ClassicRace_Styles.css" />
+
+</header>
+
+<body>
+<header>
+<h1 id="header">Welcome to the Classic Race!</h1>
+</header>
+
+<section id="theRace">
+<div id="raceDashboard">
+
+<h2>Today's Contenders:</h2>
+
+<div id="counterSpace">
+		<div id="progRandy" class="racerProgress"><p class="caption">Randy Rabbit</p></div>	
+		<div id="progTommy" class="racerProgress"><p class="caption">Tommy Tortoise</p></div>
+		<div id="progRodney" class="racerProgress"><p class="caption">Rodney Robot</p></div>
+</div>
+
+<div id="raceTrack">
+	<div id="randyTrack" class="racerSpace">
+		<img src="images/randyRabbit.png" width="106" height="50" id="randyID"></img></div>
+	<div id="tommyTrack" class="racerSpace">
+		<img src="images/tommyTortoise.jpeg" width="115" height="50"></img></div>
+	<div id="rodneyTrack" class="racerSpace">
+		<img src="images/rodneyRobot.jpeg" width="51" height="70"></img></div>
+</div>
+
+<!--
+MILEPOST IDEA FOR changing BET DURING RACE
+<div id="milepost">Milepost:<br /><span id="miles">5</span></div>
+-->
+
+</div>
+</section>
+
+
+<div id="theBetting">
+
+	<h2>Place your bet!</h2>
+	<p>Here's your chance to make a mint on your knowledge of classic racing. Enter your bet below:</p>
+
+<form name="raceParameters" id="raceParams">
+	<p>How far should we race today?<br />
+	<input id="distance" type="text" size="20"><br /></p>
+
+	<p>Who are you betting on to win?<br>
+	<input type="radio" name="userBet" value="Randy Rabbit">Randy Rabbit (3:1 odds)<br>
+	<input type="radio" name="userBet" value="Tommy Tortoise">Tommy Tortoise (2:1 odds)<br>
+	<input type="radio" name="userBet" value="Rodney Robot">Rodney Robot (4:1 odds)</p>
+
+	<p>How much do you bet?<br />
+	<input id="betAmount" type="text" size="20"><br /></p>
+
+	<input type="submit" value="Start The Race!">
+</form>
+
+</div>
+
+
+<div id="messageArea">
+
+Message Area
+
+
+</div>
+
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/HW_ClassicRace_JQ.js"></script>
+
+<!--Use Google JQuery file??-->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+
+</body>
+</html>

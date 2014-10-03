@@ -1,0 +1,115 @@
+
+
+body {
+	font-family: arial;
+	background-color: white;
+	font-size: .75em;
+}
+
+h1 {
+	font-family: arial;
+	font-size: 2.5em;
+}
+
+h2 {
+	font-family: arial;
+	font-size: 1.75em;
+}
+
+#header {
+	font-family: Times;
+	font-size: 2.5em;
+	border-width: 2px;
+}
+
+#raceDashboard {
+	display: inline-block;
+	width: 1080px;
+	border: solid 1px green;
+	clear: right;
+}
+
+#counterSpace {
+	float: left;
+	width: 80px;
+	border: solid 2px black;
+}
+
+.racerProgress {
+	display: inline-block;
+	border: solid 1px red;
+	font: verdana 1.5em red bold;
+	width: 80px;
+	height: 100px;
+}
+
+#raceTrack {
+	position: inline-block;
+	float: left;
+	width: 990px;
+	border: solid 2px blue;
+	text-align: left;
+}
+
+.racerSpace {
+	position: relative;
+	right;
+	border: solid 1px orange;
+	height: 100px;
+	vertical-align: bottom;
+}
+
+.caption {
+	text-align: center;
+	vertical-align: bottom;
+	font-family: times;
+	font-size: .65em;
+}
+
+#randyTrack {
+	font-family: times;
+	font-size: .65em;
+}
+
+#tommyTrack {
+	font-family: times;
+	font-size: .65em;
+}
+
+#rodneyTrack {
+	font-family: times;
+	font-size: .65em;
+}
+
+.countProgress {
+	font-weight: bold;
+	font-style: italic;
+}
+
+#milepost {
+	float: left;
+	width: 80px;
+	font-size: 8px;
+	text-align: center;
+	border: solid gray 1px;
+}
+
+#miles {
+	font-size: 48px;
+	text-align: center;
+}
+
+#theBetting {
+	display: inline-block;
+	float: left;
+	width: 340px;
+	border: solid 1px green;
+}
+
+#messageArea {
+	float: left;
+	width: 340px;
+	height: 200px;
+	border: solid 1px black;
+}
+
