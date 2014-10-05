@@ -10,6 +10,7 @@
 <body>
 <header>
 <h1 id="header">Welcome to the Classic Race!</h1>
+<p style="width: 990">We all know the classic story of the rabbit and the tortoise and their epic race. Now, thanks to modern web technology, we can see the results for ourselves! But in the 21st century, we have to account for a new breed of racer: the robot. And just as the rabbit is distractible, so does the robot encounter the occasional OS crash and other breakdowns. He's not as as fast as the rabbit, but he breaks down less frequently. He's definitely faster than the tortoise. Now, not only can you see the great race, you can make some money betting on it as well. Think strategically. Have fun!</p>
 </header>
 
 <section id="theRace">
@@ -18,33 +19,28 @@
 <h2>Today's Contenders:</h2>
 
 <div id="counterSpace">
-		<div id="progRandy" class="racerProgress"><p class="caption">Randy Rabbit</p></div>	
-		<div id="progTommy" class="racerProgress"><p class="caption">Tommy Tortoise</p></div>
-		<div id="progRodney" class="racerProgress"><p class="caption">Rodney Robot</p></div>
+		<div class="racerProgress"><p id="progRandy" class="caption">Randy Rabbit</p></div>	
+		<div class="racerProgress"><p id="progTommy" class="caption">Tommy Tortoise</p></div>
+		<div class="racerProgress"><p id="progRodney" class="caption">Rodney Robot</p></div>
 </div>
 
 <div id="raceTrack">
 	<div id="randyTrack" class="racerSpace">
-		<img src="images/randyRabbit.png" width="106" height="50" id="randyID"></img></div>
+		<img src="images/randyRabbit.png" width="105" height="48" id="randyPic"  class="racerPic"></img></div>
 	<div id="tommyTrack" class="racerSpace">
-		<img src="images/tommyTortoise.jpeg" width="115" height="50"></img></div>
+		<img src="images/tommyTortoise.jpeg" width="105" height="48" id="tommyPic"  class="racerPic"></img></div>
 	<div id="rodneyTrack" class="racerSpace">
-		<img src="images/rodneyRobot.jpeg" width="51" height="70"></img></div>
+		<img src="images/robotNewest.jpeg" width="59" height="80" id="rodneyPic" class="racerPic"></img></div>
 </div>
-
-<!--
-MILEPOST IDEA FOR changing BET DURING RACE
-<div id="milepost">Milepost:<br /><span id="miles">5</span></div>
--->
 
 </div>
 </section>
 
 
-<div id="theBetting">
+<div id="bettingArea">
 
-	<h2>Place your bet!</h2>
-	<p>Here's your chance to make a mint on your knowledge of classic racing. Enter your bet below:</p>
+	<h2>Place Your Bet</h2>
+	<p>Here's your chance to make a mint based on all your knowledge of classic racing. Enter your bet below:</p>
 
 <form name="raceParameters" id="raceParams">
 	<p>How far should we race today?<br />
@@ -53,7 +49,7 @@ MILEPOST IDEA FOR changing BET DURING RACE
 	<p>Who are you betting on to win?<br>
 	<input type="radio" name="userBet" value="Randy Rabbit">Randy Rabbit (3:1 odds)<br>
 	<input type="radio" name="userBet" value="Tommy Tortoise">Tommy Tortoise (2:1 odds)<br>
-	<input type="radio" name="userBet" value="Rodney Robot">Rodney Robot (4:1 odds)</p>
+	<input type="radio" name="userBet" value="Rodney Robot">Rodney Robot (5:1 odds)</p>
 
 	<p>How much do you bet?<br />
 	<input id="betAmount" type="text" size="20"><br /></p>
@@ -63,10 +59,11 @@ MILEPOST IDEA FOR changing BET DURING RACE
 
 </div>
 
-
 <div id="messageArea">
 
-Message Area
+<h2>Official Race Results</h2>
+<p id="winAlert" class="raceAlert"></p>
+<p id="payAlert" class="raceAlert"></p>
 
 
 </div>

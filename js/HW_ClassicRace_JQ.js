@@ -30,21 +30,16 @@ function Racer(name, speed, focus, odds) {
 //INSTANTIATE RACER OBJECTS [properties via input?]
 var rabbit = new Racer("Randy Rabbit", 10, 3, 3);
 var tortoise = new Racer("Tommy Tortoise", 3, 10, 2);
-var robot = new Racer("Rodney Robot", 7, 4, 4);
+var robot = new Racer("Kozmo Kitty", 7, 4, 5);
 
 
 //FUNCTION TO ADVANCE RACERS
-
-
 function runRace($finish) {
 
 	while (rabbit.distance < $finish && tortoise.distance < $finish && robot.distance < $finish) {
 		// setTimeout(function() {
 
-
-			
 			//alert("The race duration is " + $finish + " miles.");
-			//$('#progRandy').html(rabbit.progressReport());
 
 			/*function() {
 				var padding = 'padding-left';
@@ -53,25 +48,17 @@ function runRace($finish) {
 			};*/
 
 			rabbit.advance();
+			$('#randyPic').animate({ left: '' + ((rabbit.distance / $finish) * 900) }, 35);
+			$('#progRandy').html(rabbit.progressReport());
 			tortoise.advance();
+			$('#tommyPic').animate({ left: '' + ((tortoise.distance / $finish) * 900) }, 35);
+			$('#progTommy').html(tortoise.progressReport());
 			robot.advance(); 
- 			
-			$('#randyID').delay(1000).queue( function(next){ 
+			$('#rodneyPic').animate({ left: '' + ((robot.distance / $finish) * 900) }, 35); 			
+			$('#progRodney').hide().toggle().html(robot.progressReport());
 
+			//$('#randyID').animate({paddingLeft: '+=' + rabbit.speed});
 
-				$(this).css('padding-left', '+=50');
-
-				$('#progRandy').html(rabbit.progressReport());
-				$('#progTommy').html(tortoise.progressReport());
-				$('#progRodney').html(robot.progressReport());
-
-    		next();
-    	});
-
-
-
-
-			//Next: write progress reports to HTML container progRandy, progTommy, progRodney...
 			//OLD CODE: alert(rabbit.progressReport() + "\n" + tortoise.progressReport() + "\n" + robot.progressReport());
 
 			//Create milepost var and increment for each turn then show in HTML(?)
@@ -82,21 +69,20 @@ function runRace($finish) {
 };
 
 
-
-
 //FUNCTION TO DECLARE WINNER
 var winner;
 
 function declareWinner() {
-	if (rabbit.distance > (tortoise.distance || robot.distance)) {
+	if (rabbit.distance > (tortoise.distance && robot.distance)) {
 		winner = rabbit;
 		}
-		else if (tortoise.distance > (rabbit.distance || robot.distance)) {
+		else if (tortoise.distance > (rabbit.distance && robot.distance)) {
 			winner = tortoise;
 		} 
 		else {
 			winner = robot;
 		}
+		$('#winAlert').text('We have a winner! Hope you bet on ' + winner.name + ' who won with ' + winner.distance + '!!');
 		//alert("We have a winner! Hope you bet on " + winner.name + " who won with " + winner.distance + "!!\n");
 		//Next: write to HTML container #messageArea...
 };
@@ -107,14 +93,17 @@ var payout;
 function payoutBet() {
 	if (winner.name == $userBet) {
 		payout = winner.odds * $betAmount;
+		$('#payAlert').text('Nice betting, you win! You bet: $' + $betAmount + '. You win: $' + payout + '!!');
 		//alert("Nice betting, you win!\nYou bet: $" + $betAmount + "\nYou win: " + "$" + payout);
+		//'Nice betting, you win! You bet: $' + $betAmount + '\nYou win: ' + '$' + payout
 	}
 	else {
 		//alert("Sorry, you bet $" + $betAmount + " on " + $userBet + ". You lose.\nBetter luck next time!");
+		$('#payAlert').text('Sorry, you bet $' + $betAmount + ' on ' + $userBet + '. You lose. Better luck next time!');
 	}
 };
 
-//CAPTURE RACE PARAMETERS & LAUNCH RACE (VIA FORM)
+//CAPTURE RACE PARAMETERS & LAUNCH RACE VIA FORM
 $('#raceParams').on('submit', function(e) {
 	$finish = $('#raceParams input[id=distance]').val();
 	$userBet = $('#raceParams input[name=userBet]:checked').val();
@@ -126,7 +115,7 @@ $('#raceParams').on('submit', function(e) {
 	e.preventDefault();
 });
 
-}) //Close document.ready
+}) //Close $(document).ready
 
 /* PSEUDOCODE OUTLINE+++++++++++++++++++++++++++++++++++++++
 
